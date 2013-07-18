@@ -16,10 +16,10 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/federicopast">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/cvdlab-cg/419367/tree/master/final-project">View on GitHub</a>
 
           <h1 id="project_title">Computer Graphics Final Projects </h1>
-          <h2 id="project_tagline">Federico Pastori:419367     A.A. 2012/2013</h2>
+          <h2 id="project_tagline">Federico Pastori: 419367     A.A. 2012/2013</h2>
 
         </header>
     </div>
@@ -37,13 +37,13 @@
 <a name="Summary" class="anchor" href="#Summary"><span class="octicon octicon-link"></span></a>Summary</h3>
 
 <ul>
-<li><a href="#Eileen-gray-Bibendum-chair">Eileen gray: Bibendum chair</a></li>
+<li><a href="#Eileen-Gray-Bibendum-Chair">Eileen gray: Bibendum chair</a></li>
 <li><a href="#Poul-Henningsen-red-table-lamp">Poul Henningsen: red table lamp</a></li>
 <li><a href="Philippe-Starck-Xo-Dole-Melipone-table">Philippe Starck: Xo Dole Melipone table</a></li>
 </ul>
 
 <h2>
-<a name="Eileen-gray-Bibendum-chair" class="anchor" href="#Eileen-gray-Bibendum-chair"><span class="octicon octicon-link"></span></a>Eileen gray: Bibendum chair</h2>
+<a name="Eileen-gray" class="anchor" href="#Eileen-gray"><span class="octicon octicon-link"></span></a>Eileen gray</h2>
 
 <h3>
 <a name="Eileen-gray" class="anchor" href="#Eileen-gray"><span class="octicon octicon-link"></span></a>Kathleen Eileen Moray Gray  (1878 - 1976)</h3>
@@ -54,20 +54,96 @@
 In 1898, Gray attended classes at the Slade School of Fine Art, where she studied painting. While there, she met Jessie Gavin and Kathleen Bruce. The main style at the fair was Art Nouveau and Gray was a fan of the work of Charles Rennie Mackintosh which was on exhibit. Soon after, Gray moved to Paris along with her friends Gavin and Bruce from the Slade School. She continued her studies in Paris at the Académie Julian and the Académie Colarossi. In 1968, a complimentary magazine article drew attention to her accomplishments, and Gray agreed to production of her Bibendum chair and E-1027 table as well as numerous other pieces with Zeev Aram. They were soon to become modern furniture classics. On 8 November 1972, the Doucet sale added to the interest which continues to this day in the 'antiques' of the twentieth century. Gray's 'Le Destin' screen was featured in the sale and went for $36,000. Collectors entered the chase, and Yves Saint Laurent's interest completed the mythification of her image.
 In February 2009, a "Dragons" armchair made by Gray between 1917-1919 (acquired by her early patron Suzanne Talbot and later part of the Yves Saint Laurent and Pierre Bergé collection) was sold at auction in Paris for 21.9 million euros (US$28.3 million), setting an auction record for 20th century decorative art.</p>
 
+<h1>
+<a name="Eileen-Gray-Bibendum-Chair" class="anchor" href="#Eileen-Gray-Bibendum-Chair"><span class="octicon octicon-link"></span></a>The chair: Bibendum</h1>
+
+<p><img src="images/Bibendum_top.jpg" alt="Bibendum_top"></p>
+<p><img src="images/Bibendum_front.jpg" alt="Bibendum_front"></p>
+<p><img src="images/Bibendum_side.jpg" alt="Bibendum_side"></p>
+<p><img src="images/Bibendum_behind.jpg" alt="Bibendum_behind"></p>
+
+<h2>
+<a name="Details" class="anchor" href="#Details"><span class="octicon octicon-link"></span></a>Details:</h2>
+
+<ul>
+<li>Product size(cm): W92X D82 X H68</li>
+<li>Materials: Full grain italian leather filled with flame retardant urethane. Frame - Highly finished stainless steel </li>
+<li>Infos: Eileen gray chair "Bibendum",France,1925.</li>
+</ul>
+
+<h2>
+<a name="Bibendum-description" class="anchor" href="#Bibendum-description"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p>The Bibendum chair was designed by Eileen Gray in the early 1900s but was largely forgotten until an original surfaced in a 1972 auction prompting a new production of this design classic. It is an opulent interpretation of the modernist aesthetic and firmly holds its own in the archives of great furniture design alongside the work of Mies van der Rohe and Le Corbusier who shunned Gray's artistic endeavours when alive. </p>
+
+<h2>
+<a name="3D-Model-Decomposition" class="anchor" href="#3D-Model-Decomposition"><span class="octicon octicon-link"></span></a>3D Model Decomposition</h2>
+
+<p>The 3D model of this chair can be decomposed in two main parts:</p>
+
+<ul>
+<li>Leather seat with pillows</li>
+<li>The metal frame</li>
+</ul>
+
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="Pillows" class="anchor" href="#Pillows"><span class="octicon octicon-link"></span></a>Pillows</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p><img src="images/pillows.jpg" alt="pillows"></p>
+<p>The leather set, can in turn be decomposed into two main parts:</p>
+
+<ul>
+<li>The seat pillow</li>
+<li>Two top pillows</li>
+</ul>
+
+<p>To represent these components, have been used mainly Bezier curves together with the half-torus and Bezier surfaces. The hardest part, was to make the outer covers of the seat pillow, so that would follow faithfully the inner profile. For the realization of covers, were used half-torus and Bezier surfaces.</p>
+
+<p>Torus function used: </p>
+
+<pre><code>var torus = function (R, r){
+  return mapping = function (v) {
+    var a = v[0]
+    var b = v[1]
+
+    var u = (r * COS(a) + R) * COS(b);
+    var v = (r * COS(a) + R) * SIN(b);
+    var w = (r * SIN(a));
+    return [u,v,w];
+  };
+};
+</code></pre>
 
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a name="The-metal-frame" class="anchor" href="#The-metal-frame"><span class="octicon octicon-link"></span></a>The metal frame</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p><img src="images/frame.jpg" alt="frame"></p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>The most difficult part in the realization of the metal structure, has been that of the inclined parts to coincide perfectly with those in plan, to do this was calculated the angle of inclination as faithful as possible to reality. Even in this case have been used half torus, Bezier curves and surfaces.</p>
+
+<p>Oblique section: </p>
+
+<p><img src="images/section.jpg" alt="section"></p>
+
+<h2>
+<a name="3D-Model-Screenshots" class="anchor" href="#3D-Model-Screenshots"><span class="octicon octicon-link"></span></a>3D Model Screenshots</h2>
+
+<p><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/The%20chair%20Bibendum/Chair_Bibendum.js">
+<img src="images/bib_front_view.jpg" alt="section">
+<img src="images/bib_top_view.jpg" alt="section">
+<img src="images/bib_side_view.jpg" alt="section">
+<img src="images/bib_behind_view.jpg" alt="section">
+<img src="images/bib_bottom_view.jpg" alt="section"></a></p>
+
+<h2>
+<a name="3D-Model" class="anchor" href="#3D-Model"><span class="octicon octicon-link"></span></a>3D Model</h2>
+
+<ul>
+<li><a href="#Eileen-Gray-Bibendum-Chair">CLICK FOR 3D MODEL VIEW</a></li>
+<li><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/The%20chair%20Bibendum/Chair_Bibendum.js">JAVASCRIPT CODE</a></li>
+</ul>
+
       </section>
     </div>
 

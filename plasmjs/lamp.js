@@ -93,9 +93,8 @@ var surf10 = T([2])([21.13])(MAP(map10)(rot_domain));
 var surf11 = T([2])([24.4])(MAP(map11)(rot_domain));
 var cylinder2 = T([2])([21.65])(EXTRUDE([2.85])(DISK(1.2)([50,1])))
 var base = T([2])([25.12])(EXTRUDE([0.38])(DISK(5.7)([50,1])))
-var t_tor5 = COLOR([1,0.843,0])(T([2])([25.32])(MAP(torus(5.67,0.21))(domainTorus)));
 var part_05 = STRUCT([surf10,cylinder2]);
-var part_06 = STRUCT([surf11,base,t_tor5]);
+var part_06 = STRUCT([surf11,base]);
 var bottom_lamp = COLOR([1,0.843,0])(STRUCT([part_02,part_03,part_04,cylinder,part_05,part_06]));
 
 //LightBulb

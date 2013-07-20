@@ -135,7 +135,7 @@ In February 2009, a "Dragons" armchair made by Gray between 1917-1919 (acquired 
 <p><img src="images/section.jpg" alt="section"></p>
 
 <h2>
-<a name="Model-Screenshots" class="anchor" href="#Model-Screenshots"><span class="octicon octicon-link"></span></a>Model Screenshots</h2>
+<a name="Model-Screenshots" class="anchor" href="#Model-Screenshots"><span class="octicon octicon-link"></span></a>Model Gallery</h2>
 
 <p><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/The%20chair%20Bibendum/Chair_Bibendum.js">
 <img src="images/bib_front_view.jpg" alt="bib_front">
@@ -221,7 +221,7 @@ var t_map02 = ROTATIONAL_SURFACE(t_p02);
 
 
 <h2>
-<a name="Model-Screenshots-lamp" class="anchor" href="#Model-Screenshots-lamp"><span class="octicon octicon-link"></span></a>Model Screenshots</h2>
+<a name="Model-Screenshots-lamp" class="anchor" href="#Model-Screenshots-lamp"><span class="octicon octicon-link"></span></a>Model Gallery</h2>
 
 <p><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/PH%20table%20lamp/PH%20table%20lamp.js">
 <img src="images/3d_lamp3.jpg" alt="3d_lamp3">
@@ -296,6 +296,46 @@ var t_map02 = ROTATIONAL_SURFACE(t_p02);
 <a name="The-metal-frame" class="anchor" href="#The-metal-frame"><span class="octicon octicon-link"></span></a>The metal frame</h3>
 
 <p><a href = "https://github.com/cvdlab-cg/419367/blob/master/final-project/Xo%20Dole%20Melipone%20table/Xo%20Dole%20Melipone%20table.js"> <img src="images/table_2.jpg" alt="table_2"></a></p>
+
+
+<p>The realization of the metal frame, was the most difficult part of the project, because each component was tilted differently. For this reason have been made additional components that bring in plan the table legs, on both the supporting plane is on the ground. For the representation of the 3D model were used Bezier surfaces and curves, half torus and disks.</p>
+
+<p>Esempio di componente aggiuntivo e relativo codice:</p>
+
+<p><a href = "https://github.com/cvdlab-cg/419367/blob/master/final-project/Xo%20Dole%20Melipone%20table/Xo%20Dole%20Melipone%20table.js"> <img src="images/table_5.jpg" alt="table_5"></a></p>
+
+
+<pre><code>var p1_0 = [[0,0,0],[0,0.183,0],[0.294,0.183,0],[0.294,0,0],[0.294,-0.183,0],[0,-0.183,0],[0,0,0]];
+var p1_1 = [[0,0,0],[0,0.183,0],[0.294,0.183,0.04],[0.294,0,0.04],[0.294,-0.183,0.04],[0,-0.183,0],[0,0,0]];
+var p1_2 = [[0,0,0.001],[0,0.151,0.001],[0.23,0.15,0.0306],[0.23,0,0.0306]];
+var p1_3 = [[0,0,0.001],[0,-0.152,0.001],[0.23,-0.148,0.0306],[0.23,0,0.0306]];
+var c1_0 = BEZIER(S0)(p1_0);
+var c1_1 = BEZIER(S0)(p1_1);
+var c1_2 = BEZIER(S0)(p1_2);
+var c1_3 = BEZIER(S0)(p1_3);
+var mp1_1 = BEZIER(S1)([c1_0,c1_1]);
+var mp1_2 = BEZIER(S1)([c1_2,c1_3]);
+var s1_1 = T([0,2])([3.72,-0.01])(R([0,2])(-PI/35)(R([0,1])(PI)(MAP(mp1_1)(dom2D))));
+var s1_2 = T([0,2])([3.72,-0.01])(R([0,2])(-PI/35)(R([0,1])(PI)(MAP(mp1_2)(dom2D))));
+var surf1 = STRUCT([s1_1,s1_2]);</code></pre>
+
+<h2>
+<a name="Model-Screenshots-table" class="anchor" href="#Model-Screenshots-table"><span class="octicon octicon-link"></span></a>Model Gallery</h2>
+
+<p><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/Xo%20Dole%20Melipone%20table/Xo%20Dole%20Melipone%20table.js">
+<img src="images/table_3.jpg" alt="table_3">
+<img src="images/table_4.jpg" alt="table_4">
+<img src="images/table_6.jpg" alt="table_6">
+<img src="images/table_7.jpg" alt="table_7"></a></p>
+
+<h2>
+<a name="3D-Model" class="anchor" href="#3D-Model"><span class="octicon octicon-link"></span></a>3D Model</h2>
+
+<ul>
+<li><a href="plasmjs/table.html">3D MODEL VIEW</a></li>
+<li><a href="https://github.com/cvdlab-cg/419367/blob/master/final-project/Xo%20Dole%20Melipone%20table/Xo%20Dole%20Melipone%20table.js">JAVASCRIPT CODE</a></li>
+</ul>
+
 
 
       </section>
